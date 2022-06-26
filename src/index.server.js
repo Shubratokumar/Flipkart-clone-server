@@ -4,6 +4,9 @@ const cors = require("cors");
 const env = require("dotenv");
 const mongoose = require('mongoose');
 
+// routes
+const userRoutes = require("./routes/user");
+
 // environment variable
 env.config();
 
@@ -18,19 +21,8 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cl
     console.log("MongoDB Database Conntected.")
 });
 
+app.use('/api', userRoutes);
 
-// GET API
-app.get('/', (req, res, next)=>{
-    res.status(200).json({
-        message: "Hello from Flipkart Server"
-    })
-})
-// POST API
-app.post('/data', (req, res, next)=>{
-    res.status(200).json({
-        message: req.body
-    })
-})
 
 
 app.listen(process.env.PORT, ()=>{
