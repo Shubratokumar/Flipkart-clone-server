@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 // routes
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
 // environment variable
 env.config();
@@ -21,7 +22,9 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cl
     console.log("MongoDB Database Conntected.")
 });
 
+// API's and routes
 app.use('/api', authRoutes);
+app.use('/api', adminRoutes);
 
 
 
