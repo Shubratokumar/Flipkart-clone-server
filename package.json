@@ -10,13 +10,13 @@
     "ecommerce",
     "mern",
     "project",
-    "backend",
-    "api",
+    "backend api",
     "api"
   ],
   "author": "Shubrato Kumar",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
