@@ -5,7 +5,7 @@ const env = require("dotenv");
 const mongoose = require('mongoose');
 
 // routes
-const userRoutes = require("./routes/user");
+const authRoutes = require("./routes/auth");
 
 // environment variable
 env.config();
@@ -21,7 +21,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cl
     console.log("MongoDB Database Conntected.")
 });
 
-app.use('/api', userRoutes);
+app.use('/api', authRoutes);
 
 
 
